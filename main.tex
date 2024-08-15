@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+
+\include{setup}
+\include{titlepage}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage\maketitle
+\noindent \textsc{Course}\hfill XYZ\\
+\vspace{.6cm} \\
+\textsc{Supervisor}\hfill XYZ
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\input{sections/00_abstract}
+\BgThispage\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOC etc. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\BgThispage\
+% \thispagestyle{empty}
+\tableofcontents
+\listoffigures
+\listoftables
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\pagenumbering{arabic}
+\setstretch{1.5}
+
+\input{sections/01_motivation}
+\input{sections/02_definition}
+\input{sections/03_methodology}
+\input{sections/04_results}
+\input{sections/05_discussion}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\pagestyle{empty}
+\setstretch{1.0}
+
+% \nocite{*}
+\bibliographystyleprm{apalike}
+\bibliographyprm{primary_references}
+
+\bibliographystylescnd{apalike}
+\bibliographyscnd{secondary_references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+% \input{sections/appendices}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Declaration %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\setstretch{1.5}
+\input{sections/declaration.tex}
+
+\end{document}

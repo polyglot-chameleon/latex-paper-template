@@ -1,0 +1,150 @@
+\usepackage[a4paper, width=17cm, height=24cm]{geometry}
+
+% \usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\graphicspath{ {img/} }
+
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{pbox}
+\usepackage{colortbl}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{ amssymb }
+
+\usepackage{epigraph}
+% \epigraphfontsize{\small\itshape}
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=.5\textwidth, compat=1.7}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{natbib}
+\setcitestyle{notesep={: }}
+
+\usepackage{multibib}
+\newcites{prm}{Primary}
+\newcites{scnd}{Secondary}
+
+\usepackage[pages=some]{background}
+\backgroundsetup{
+    scale=.5,
+    color=black,
+    opacity=0.09,
+    angle=0,
+    % position=current page.south east,
+    position={22cm, -40cm},
+    contents={
+            \includegraphics[scale=1]{seal}
+        }
+}
+
+\usepackage[titletoc]{appendix}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Numbered environment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{example}[section]
+\newenvironment{example}[1]
+{\begin{center}
+        % #1\\[1ex]
+        \begin{tabular}{|p{0.9\textwidth}|}
+            \toprule
+            \refstepcounter{example}%\par\medskip
+            \noindent \textbf{Example~\theexample. #1} \rmfamily\par\medskip \\
+            }
+            {
+            \\\\\bottomrule
+        \end{tabular}
+    \end{center}
+}
+
+\usepackage{smartdiagram}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Custom colors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\definecolor{Apricot}{rgb}{1, .8, .502}
+\definecolor{Violet}{rgb}{.902, .702, 1}
+\definecolor{SexyGray}{rgb}{.9, .9, .978}
+
+\definecolor{LightOrange}{rgb}{1, .722, .302}
+\definecolor{Gold}{rgb}{.8, .6, 0}
+
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+
+% \usepackage[dvipsnames]{xcolor}
+
+\newcommand{\hl}[1]{
+    \textcolor{Gold}{\textbf{#1}}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tikz styling %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+\usetikzlibrary{positioning}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=Gold]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Syntax highlight %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstset{
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    showstringspaces=false,
+    commentstyle=\color{gray}\upshape,
+    numbers=left,
+    backgroundcolor = \color{SexyGray},
+    xleftmargin = 1cm
+}
+
+\lstdefinelanguage{XML}
+{
+    basicstyle=\ttfamily\footnotesize,
+    morestring=[s]{"}{"},
+    morecomment=[s]{?}{?},
+    morecomment=[s]{!--}{--},
+    commentstyle=\color{darkgreen},
+    moredelim=[s][\bfseries\color{black}]{>}{<},
+    moredelim=[s][\color{red}]{\ }{=},
+    stringstyle=\color{blue},
+    identifierstyle=\bfseries\color{maroon}
+}
+
+
+\pagestyle{fancy}
+% \fancyhf{}
+\lhead{\nouppercase{\rightmark}}
+\rhead{Yeah. Right-side Header.}
+% \rfoot{\thepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Custom commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cell}[1]{
+    \pbox{.8\textwidth}{\vspace{3mm}#1\vspace{3mm}}
+}
+
+\newcommand{\makeCit}[2]{
+    \hspace{1cm}\pbox{.8\textwidth}{\footnotesize ``#1'' #2\\}
+}
+
+\DeclareUnicodeCharacter{0308}{``}
